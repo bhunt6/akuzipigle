@@ -3,9 +3,10 @@ import { dictWords } from "./6_letter_words.js";
 let container = document.querySelector(".container");
 let winScreen = document.querySelector(".win-screen");
 let submitButton = document.querySelector(".submit");
-let inputCount, tryCount, inputRow, successCount;
+let inputCount, tryCount, inputRow, successCount, inputBox;
 let backSpaceCount = 0;
 let randomWord, finalWord;
+let wordObj;
 
 //Detect touch device
 const isTouchDevice = () => {
