@@ -75,6 +75,7 @@ const checker = async (e) => {
       finalWord += value;
       console.log("inputCount: "+ inputCount);
       if (inputCount < 5) {
+        console.log("inputCountInside: "+ inputCount);
         //enable next
         updateDivConfig(e.target.nextSibling, false);
       }
