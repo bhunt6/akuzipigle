@@ -43,7 +43,7 @@ const startGame = async () => {
   inputRow = document.querySelectorAll(".input-group");
   inputBox = document.querySelectorAll(".input-box");
   for (let k=0; k<inputBox.length; k++){
-    inputBox[k].addEventListener("keyup", checker);
+    inputBox[k].addEventListener("change", checker);
   };
   updateDivConfig(inputRow[tryCount].firstChild, false);
   wordObj = getRandom();
@@ -127,7 +127,6 @@ const validateWord = async () => {
       failed = true;
     }
 
-  //If not then stop here
   if (failed) {
     return false;
   }
