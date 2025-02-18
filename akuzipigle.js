@@ -41,7 +41,9 @@ const startGame = async () => {
 //onkeyup="checker(event)"
   inputRow = document.querySelectorAll(".input-group");
   inputBox = document.querySelectorAll(".input-box");
-  inputBox.addEventListener("keyup", checker);
+  for (let k=0; k<inputBox.length; k++){
+    inputBox[k].addEventListener("keyup", checker);
+  };
   updateDivConfig(inputRow[tryCount].firstChild, false);
   wordObj = getRandom();
   randomWord = wordObj.word.toUpperCase();
