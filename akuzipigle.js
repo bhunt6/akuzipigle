@@ -43,7 +43,7 @@ const startGame = async () => {
   inputRow = document.querySelectorAll(".input-group");
   inputBox = document.querySelectorAll(".input-box");
   for (let k=0; k<inputBox.length; k++){
-    inputBox[k].addEventListener("change", checker);
+    inputBox[k].addEventListener("keyup", checker);
   };
   updateDivConfig(inputRow[tryCount].firstChild, false);
   wordObj = getRandom();
