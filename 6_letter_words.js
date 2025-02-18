@@ -432,3 +432,5 @@ const dictWords = [
 {"UUID":"1117be3f621329fc9b9a463662964ef598694bd4","word":"yulaaq","ipa":["julɑːq"],"gloss":["insignificant person","lowly man"],"pos":"<span class='tag nounTag'>NOUN</span>"},
 {"UUID":"94713856147adec8c8b555b33aaab258be9c3c2b","word":"yulluk","ipa":["juɬuk"],"gloss":["bad man"],"pos":"<span class='tag nounTag'>NOUN</span>"},
 {"UUID":"d4ffdbc937efe5ec4dad3c4f5ee49bdadc05f0c7","word":"yuwayu","ipa":["juɣʷɑju"],"gloss":["common loon (Gavia immer)"],"pos":"<span class='tag nounTag'>NOUN</span>"}];
+
+export {dictWords};
