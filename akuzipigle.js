@@ -67,7 +67,7 @@ const startGame = async () => {
     inputGroup.classList.add("input-group");
     for (let j = 0; j < 6; j++) {
       //Disabled by default. We will enable one by one
-      inputGroup.innerHTML += `<input type="text" class="input-box" onkeyup="checker(event)" maxlength="1" disabled>`;
+      inputGroup.innerHTML += `<input type="text" class="input-box" onchange="checker(event)" maxlength="1" disabled>`;
     }
     container.appendChild(inputGroup);
   }
