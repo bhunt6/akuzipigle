@@ -20,9 +20,14 @@ body {
   border-radius: 0.5em;
   box-shadow: 0 2.5em 3.75em rgba(30, 19, 70, 0.3);
 }
-.container,
+.container {
+  width: 22.5em;
+  height: 22.5em;
+  position: relative;
+}
+
 .rules {
-  width: 18.75em;
+  width: 15em;
   height: 22.5em;
   position: relative;
 }
