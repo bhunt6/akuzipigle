@@ -19,6 +19,39 @@ const isTouchDevice = () => {
   }
 };
 
+
+//Logic for writing in the inputs
+const checker = async (e) => {
+  let value = e.target.value.toUpperCase();
+  //disable current input box
+  updateDivConfig(e.target, true);
+  if (value.length == 1) {
+    //if the word is lesss than 6 length and the button isn't backspace
+    if (inputCount <= 5 && e.key != "Backspace") {
+      //Attach the letter to the final word
+      finalWord += value;
+      if (inputCount < 5) {
+        //enable next
+        updateDivConfig(e.target.nextSibling, false);
+      }
+    }
+    inputCount += 1;
+  } else if (value.length == 0 && e.key == "Backspace") {
+    //Empty input box anduser press Backspace
+    finalWord = finalWord.substring(0, finalWord.length - 1);
+    if (inputCount == 0) {
+      //For first inputbox
+      updateDivConfig(e.target, false);
+      return false;
+    }
+    updateDivConfig(e.target, true);
+    e.target.previousSibling.value = "";
+    //enable previous and decrement count
+    updateDivConfig(e.target.previousSibling, false);
+    inputCount = -1;
+  }
+};
+
 //Initial Setup
 const startGame = async () => {
   winScreen.classList.add("hide");
@@ -55,38 +88,6 @@ const updateDivConfig = (element, disabledStatus) => {
   element.disabled = disabledStatus;
   if (!disabledStatus) {
     element.focus();
-  }
-};
-
-//Logic for writing in the inputs
-const checker = async (e) => {
-  let value = e.target.value.toUpperCase();
-  //disable current input box
-  updateDivConfig(e.target, true);
-  if (value.length == 1) {
-    //if the word is lesss than 6 length and the button isn't backspace
-    if (inputCount <= 5 && e.key != "Backspace") {
-      //Attach the letter to the final word
-      finalWord += value;
-      if (inputCount < 5) {
-        //enable next
-        updateDivConfig(e.target.nextSibling, false);
-      }
-    }
-    inputCount += 1;
-  } else if (value.length == 0 && e.key == "Backspace") {
-    //Empty input box anduser press Backspace
-    finalWord = finalWord.substring(0, finalWord.length - 1);
-    if (inputCount == 0) {
-      //For first inputbox
-      updateDivConfig(e.target, false);
-      return false;
-    }
-    updateDivConfig(e.target, true);
-    e.target.previousSibling.value = "";
-    //enable previous and decrement count
-    updateDivConfig(e.target.previousSibling, false);
-    inputCount = -1;
   }
 };
 
