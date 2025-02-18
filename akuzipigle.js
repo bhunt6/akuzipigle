@@ -73,6 +73,7 @@ const checker = async (e) => {
     if (inputCount <= 5 && e.key != "Backspace") {
       //Attach the letter to the final word
       finalWord += value;
+      console.log("inputCount: "+ inputCount);
       if (inputCount < 5) {
         //enable next
         updateDivConfig(e.target.nextSibling, false);
@@ -97,7 +98,6 @@ const checker = async (e) => {
 
 //When user presses enter/backspace and all the inputs are filled
 window.addEventListener("keyup", (e) => {
-  console.log("validatecheck: "+inputCount);
   if (inputCount > 5) {
     if (isTouchDevice()) {
       submitButton.classList.remove("hide");
