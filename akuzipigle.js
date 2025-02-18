@@ -3,7 +3,7 @@ import { dictWords } from "./6_letter_words.js";
 let container = document.querySelector(".container");
 let winScreen = document.querySelector(".win-screen");
 let submitButton = document.querySelector(".submit");
-let inputCount, tryCount, inputRow;
+let inputCount, tryCount, inputRow, successCount;
 let backSpaceCount = 0;
 let randomWord, finalWord;
 
