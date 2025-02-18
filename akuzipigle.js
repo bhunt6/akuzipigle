@@ -7,6 +7,7 @@ let inputCount, tryCount, inputRow, successCount, inputBox;
 let backSpaceCount = 0;
 let randomWord, finalWord;
 let wordObj;
+let wordValues = dictWords.map(({word})=>word);
 
 //Detect touch device
 const isTouchDevice = () => {
@@ -119,16 +120,12 @@ const validateWord = async () => {
   let failed = false;
   //Get all input boxes of current row
   let currentInputs = inputRow[tryCount].querySelectorAll(".input-box");
-  //Check if it is a valid english word
-  await fetch(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${finalWord}`
-  ).then((response) => {
-    if (response.status == "404") {
+  //Check if it is a valid Akuzipik word
+  if (!wordValues.includes(finalWord)){
       console.clear();
       alert("Please Enter Valid Word");
       failed = true;
     }
-  });
 
   //If not then stop here
   if (failed) {
