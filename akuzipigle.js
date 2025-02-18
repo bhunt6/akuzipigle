@@ -97,6 +97,7 @@ const checker = async (e) => {
 
 //When user presses enter/backspace and all the inputs are filled
 window.addEventListener("keyup", (e) => {
+  console.log("validatecheck: "+inputCount);
   if (inputCount > 5) {
     if (isTouchDevice()) {
       submitButton.classList.remove("hide");
@@ -126,14 +127,15 @@ const validateWord = async () => {
       alert("Please Enter Valid Word");
       failed = true;
     }
-
-  if (failed) {
+  if(failed){
     return false;
   }
   //Initially set these
   let successCount = 0;
   let successLetters = "";
   //Checks for both words
+  console.log("random: " + randomWord);
+  console.log("final: " + finalWord);
   for (let i in randomWord) {
     //if same then green
     if (finalWord[i] == randomWord[i]) {
